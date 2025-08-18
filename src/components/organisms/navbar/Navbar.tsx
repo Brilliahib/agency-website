@@ -48,9 +48,9 @@ export default function Navbar() {
         active: pathname.startsWith("/services"),
       },
       {
-        href: "/#portfolio",
+        href: "/portfolio",
         label: "Portfolio",
-        active: pathname.startsWith("#portfolio"),
+        active: pathname.startsWith("/portfolio"),
       },
       {
         href: "/about",

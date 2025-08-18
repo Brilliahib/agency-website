@@ -23,7 +23,7 @@ export default function NavLink({ href, label, active }: NavLinkProps) {
         {label}
         <span
           className={cn(
-            "absolute left-0 -bottom-1 h-[2px] bg-current transition-all duration-500 ease-out origin-left",
+            "absolute left-0 -bottom-2 h-[2px] bg-current transition-all duration-500 ease-out origin-left",
             {
               "w-full": active,
               "w-0 group-hover:w-full": !active,
