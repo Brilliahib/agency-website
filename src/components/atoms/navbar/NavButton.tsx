@@ -39,7 +39,7 @@ function MobileLink({
       <Link
         href={href}
         className={cn(
-          "flex items-center gap-4 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground",
+          "flex items-center gap-4 rounded-lg px-3 py-2 text-base font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground",
           isActive && "bg-primary/10 font-semibold text-primary"
         )}
       >
@@ -105,7 +105,7 @@ export default function NavButton() {
                     )}
                   >
                     <div className="flex items-center gap-4">
-                      <span className="text-sm">Layanan</span>
+                      <span className="text-base">Layanan</span>
                     </div>
                   </AccordionTrigger>
                   <AccordionContent className="pt-1 pb-0 pl-8 ml-5 border-l-2">
