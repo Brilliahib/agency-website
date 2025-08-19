@@ -68,10 +68,14 @@ export default function Navbar() {
 
   return (
     <div
-      className={`sticky top-0 z-50 w-full transition-all duration-500s
-        ${showNavbar ? "translate-y-0" : "-translate-y-full"}
-        ${isTop ? "bg-secondary" : "bg-white border-b"}
-      `}
+      className={`sticky top-0 z-50 w-full transition-all duration-500
+    ${showNavbar ? "translate-y-0" : "-translate-y-full"}
+    ${
+      pathname === "/" && isTop
+        ? "bg-secondary"
+        : "bg-white/80 backdrop-blur-md border-b"
+    }
+  `}
     >
       <div className="pad-x-xl flex justify-between py-4">
         <NavL />

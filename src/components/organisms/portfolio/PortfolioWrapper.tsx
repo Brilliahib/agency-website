@@ -1,5 +1,6 @@
 import Typography from "@/components/atoms/typography/Typography";
 import { Globe } from "lucide-react";
+import PortfolioList from "./PortfolioList";
 
 export default function PortfolioWrapper() {
   return (
@@ -10,6 +11,7 @@ export default function PortfolioWrapper() {
         icon={Globe}
         badge="Portfolio Kami"
       />
+      <PortfolioList />
     </div>
   );
 }

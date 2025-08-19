@@ -12,7 +12,7 @@ export default function NavLink({ href, label, active }: NavLinkProps) {
     <Link
       href={href}
       className={cn(
-        "group relative px-4 py-2 text-sm font-inter uppercase font-semibold inline-block",
+        "group relative px-4 py-2 text-sm font-inter uppercase font-semibold inline-block hover:text-primary",
         {
           "text-primary": active,
           "text-black": !active,
