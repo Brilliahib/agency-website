@@ -1,10 +1,10 @@
 "use client";
 
-import { useMemo, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import NavLink from "@/components/atoms/navbar/NavLink";
 import NavL from "@/components/atoms/navbar/NavL";
 import NavButton from "@/components/atoms/navbar/NavButton";
+import { NavLink } from "@/components/atoms/navbar/NavLink";
 
 export interface Link {
   href: string;
@@ -40,51 +40,19 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  const links = useMemo(
-    () => [
-      {
-        href: "/services",
-        label: "Layanan",
-        active: pathname.startsWith("/services"),
-      },
-      {
-        href: "/portfolio",
-        label: "Portfolio",
-        active: pathname.startsWith("/portfolio"),
-      },
-      {
-        href: "/about",
-        label: "Tentang Kami",
-        active: pathname.startsWith("/about"),
-      },
-      {
-        href: "/pricing",
-        label: "Harga",
-        active: pathname.startsWith("/pricing"),
-      },
-    ],
-    [pathname]
-  );
-
   return (
     <div
       className={`sticky top-0 z-50 w-full transition-all duration-500
     ${showNavbar ? "translate-y-0" : "-translate-y-full"}
-    ${
-      pathname === "/" && isTop
-        ? "bg-secondary"
-        : "bg-white/80 backdrop-blur-md border-b"
-    }
+    ${pathname === "/" && isTop ? "bg-secondary" : "bg-white border-b"}
   `}
     >
       <div className="pad-x-xl flex justify-between py-4">
         <NavL />
         <nav className="hidden items-center font-semibold md:flex">
-          {links.map((link) => (
-            <NavLink key={link.label} {...link} />
-          ))}
+          <NavLink />
         </nav>
-        <NavButton links={links} />
+        <NavButton />
       </div>
     </div>
   );

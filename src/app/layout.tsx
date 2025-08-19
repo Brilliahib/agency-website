@@ -41,7 +41,7 @@ export default function RootLayout({
         className={`${figtree.variable} ${inter.variable} ${notoSans.variable} antialiased font-figtree`}
       >
         <Navbar />
-        {children}
+        <main className="overflow-hidden">{children}</main>
         <Footer />
       </body>
     </html>
