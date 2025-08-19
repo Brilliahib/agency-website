@@ -63,7 +63,13 @@ export default function HomeProject() {
             { src: "/images/project/project-3.png", alt: "Proyek 3" },
             { src: "/images/project/project-4.png", alt: "Proyek 4" },
           ].map((proj) => (
-            <motion.div key={proj.alt} variants={item}>
+            <motion.div
+              key={proj.alt}
+              variants={item}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+            >
               <Image
                 src={proj.src}
                 width={1000}
