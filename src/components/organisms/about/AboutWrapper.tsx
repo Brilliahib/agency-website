@@ -3,7 +3,7 @@ import { Users } from "lucide-react";
 
 export default function AboutWrapper() {
   return (
-    <section className="pad-x-xl py-16 space-y-12">
+    <section className="pad-x-xl py-30 space-y-12">
       <Typography
         title="Tentang Kami"
         badge="Dibalik Layar Kami!"

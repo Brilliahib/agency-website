@@ -21,15 +21,11 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-
-      // deteksi paling atas
       setIsTop(currentScrollY === 0);
 
       if (currentScrollY > lastScrollY && currentScrollY > 80) {
-        // scroll ke bawah → sembunyikan navbar
         setShowNavbar(false);
       } else {
-        // scroll ke atas → tampilkan navbar
         setShowNavbar(true);
       }
 
@@ -42,9 +38,13 @@ export default function Navbar() {
 
   return (
     <div
-      className={`sticky top-0 z-50 w-full transition-all duration-500
+      className={`fixed top-0 left-0 z-50 w-full transition-all duration-500
     ${showNavbar ? "translate-y-0" : "-translate-y-full"}
-    ${pathname === "/" && isTop ? "bg-secondary" : "bg-white border-b"}
+    ${
+      pathname === "/" && isTop
+        ? "bg-transparent text-white"
+        : "bg-white border-b"
+    }
   `}
     >
       <div className="pad-x-xl flex justify-between py-4">

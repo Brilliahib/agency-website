@@ -4,7 +4,7 @@ import PricingList from "./PricingList";
 
 export default function PricingContent() {
   return (
-    <section className="pad-x-xl py-16 space-y-12">
+    <section className="pad-x-xl py-30 space-y-12">
       <Typography
         title="Daftar Harga"
         badge="Harga Murah Produk Mewah!"

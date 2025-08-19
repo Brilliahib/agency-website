@@ -53,7 +53,7 @@ export default function OrderWrapper({ slug }: OrderWrapperProps) {
 
   return (
     <>
-      <section className="pad-x-xl md:py-16 py-12 space-y-8">
+      <section className="pad-x-xl md:py-36 space-y-8">
         <div className="space-y-4">
           <div className="space-y-2">
             <h1 className="font-bold text-2xl font-inter">
