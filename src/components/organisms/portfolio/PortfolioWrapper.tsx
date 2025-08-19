@@ -1,5 +1,5 @@
 import Typography from "@/components/atoms/typography/Typography";
-import { Code } from "lucide-react";
+import { Globe } from "lucide-react";
 
 export default function PortfolioWrapper() {
   return (
@@ -7,8 +7,8 @@ export default function PortfolioWrapper() {
       <Typography
         title="Project Yang Sudah Diselesaikan"
         description="Berikut adalah beberapa proyek yang telah kami selesaikan dengan sukses."
-        icon={Code}
-        badge="Project Selesai"
+        icon={Globe}
+        badge="Portfolio Kami"
       />
     </div>
   );
