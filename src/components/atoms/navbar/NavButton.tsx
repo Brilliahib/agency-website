@@ -69,19 +69,16 @@ export default function NavButton() {
         </div>
       </div>
 
-      <div className="flex items-center md:hidden">
+      <div className="flex items-center md:hidden md:gap-0 gap-2">
+        <Button className="rounded-md font-semibold">Let&apos;s talk</Button>
         <Sheet>
           {/* Hamburger */}
           <SheetTrigger asChild>
             <Button
-              variant="ghost"
-              size="icon"
-              className="w-full shrink-0 border-0 md:hidden"
+              variant="default"
+              className="bg-[#e6e6e6] rounded-md font-semibold md:hidden hover:bg-transparent text-black hover:bg-[#e6e6e6]/80"
             >
-              <Menu
-                style={{ height: "20px", width: "20px" }}
-                className="h-24 w-24"
-              />
+              Menu
             </Button>
           </SheetTrigger>
 

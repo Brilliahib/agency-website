@@ -42,7 +42,7 @@ export default function Navbar() {
     ${showNavbar ? "translate-y-0" : "-translate-y-full"}
     ${
       pathname === "/" && isTop
-        ? "bg-transparent text-white"
+        ? "bg-white/30 backdrop-blur-lg"
         : "bg-white border-b"
     }
   `}

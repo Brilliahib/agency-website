@@ -23,7 +23,7 @@ export default function Typography({
         <span className="text-sm">{badge}</span>
       </Badge>
 
-      <h1 className="text-4xl font-bold">{title}</h1>
+      <h1 className="md:text-4xl text-3xl font-bold">{title}</h1>
       <p className="text-muted-foreground max-w-md">{description}</p>
     </div>
   );
