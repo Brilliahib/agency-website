@@ -1,7 +1,5 @@
+import ServiceUIUXWrapper from "@/components/organisms/services/ui-ux/ServiceUiUxWrapper";
+
 export default function ServiceUiUxPage() {
-  return (
-    <section>
-      <div></div>
-    </section>
-  );
+  return <ServiceUIUXWrapper />;
 }

@@ -15,8 +15,13 @@ export const navItems = [
     pathname: "/services/ui-ux",
   },
   {
-    title: "Design Logo",
-    href: "/services/design-logo",
-    pathname: "/services/design-logo",
+    title: "Logo Design",
+    href: "/services/logo",
+    pathname: "/services/logo",
+  },
+  {
+    title: "Poster Design",
+    href: "/services/poster",
+    pathname: "/services/poster",
   },
 ];

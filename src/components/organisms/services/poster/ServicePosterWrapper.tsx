@@ -4,7 +4,7 @@ import { Monitor } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
-export default function ServiceWebWrapper() {
+export default function ServicePosterWrapper() {
   return (
     <PageContainer>
       <div className="grid md:grid-cols-2 grid-cols-1 gap-8">
@@ -13,33 +13,35 @@ export default function ServiceWebWrapper() {
             variant={"outline"}
             className="bg-secondary px-4 py-2 font-semibold text-sm rounded-full flex gap-3"
           >
-            <Monitor className="h-4! w-4! text-primary" />
-            Website Development
+            <Monitor className="h-4 w-4 text-primary" />
+            Poster Design
           </Badge>
           <h1 className="md:text-4xl text-2xl font-bold">
-            Website Development Profesional untuk Bisnis Anda
+            Poster Kreatif untuk Promosi yang Berdampak
           </h1>
           <p className="text-muted-foreground leading-relaxed md:text-base text-sm">
-            Bangun kesan pertama yang kuat dengan website modern, cepat, dan
-            mudah diakses dari berbagai perangkat.{" "}
+            Poster yang menarik mampu menyampaikan pesan dengan cepat dan
+            efektif.{" "}
             <span className="md:inline hidden">
-              Kami tidak hanya membuat website, tetapi juga merancang pengalaman
-              digital yang mampu meningkatkan kredibilitas, memperluas jangkauan
-              pasar, dan mendorong pertumbuhan bisnis Anda.{" "}
+              Kami menghadirkan desain poster yang kreatif, estetik, dan sesuai
+              dengan identitas brand Anda. Dengan perpaduan tipografi, warna,
+              dan visual yang kuat, poster Anda akan mampu menarik perhatian
+              audiens sekaligus meningkatkan daya tarik promosi.
             </span>{" "}
-            Mari wujudkan ide Anda menjadi website yang memikat dan berdampak
-            nyata!
+            Saatnya buat promosi Anda lebih menonjol dengan poster profesional
+            yang berkesan!
           </p>
           <Button size={"lg"} className="rounded-md">
-            Pelajari Lebih Lanjut
+            Desain Poster Sekarang
           </Button>
         </div>
         <div className="flex justify-center">
           <Image
-            src={"/images/services/home/web.svg"}
-            alt="Website Development"
-            width={500}
-            height={300}
+            src={"/images/services/home/poster.svg"}
+            alt="Poster Design"
+            width={300}
+            height={100}
+            className="md:max-w-[300px] max-w-[200px]"
           />
         </div>
       </div>

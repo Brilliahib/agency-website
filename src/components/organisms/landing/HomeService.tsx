@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Crown } from "lucide-react";
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
+import Image from "next/image";
 
 export default function HomeService() {
   const container: Variants = {
@@ -53,18 +54,31 @@ export default function HomeService() {
               {
                 title: "Mobile Application",
                 desc: "Tim kreatif kami berfokus pada pembuatan aplikasi mobile yang mudah digunakan, interaktif, dan mampu meningkatkan keterlibatan serta pertumbuhan bisnis Anda.",
+                images: "/images/services/home/mobile.svg",
               },
               {
                 title: "Website Development",
                 desc: "Kami merancang dan mengembangkan website yang modern, responsif, dan berorientasi pada pengalaman pengguna untuk mendukung kehadiran digital bisnis Anda.",
+                images: "/images/services/home/web.svg",
               },
             ].map((service) => (
               <motion.div key={service.title} variants={item}>
                 <Card className="bg-secondary h-full">
                   <CardContent>
-                    <div className="space-y-4">
-                      <h1 className="text-xl font-semibold">{service.title}</h1>
-                      <p className="text-muted-foreground">{service.desc}</p>
+                    <div className="space-y-8">
+                      <div className="space-y-4">
+                        <h1 className="text-xl font-semibold">
+                          {service.title}
+                        </h1>
+                        <p className="text-muted-foreground">{service.desc}</p>
+                      </div>
+                      <Image
+                        src={service.images}
+                        alt={service.title}
+                        width={500}
+                        height={300}
+                        className="md:max-h-[250px] max-h-[200px]"
+                      />
                     </div>
                   </CardContent>
                 </Card>
@@ -77,22 +91,36 @@ export default function HomeService() {
               {
                 title: "UI / UX",
                 desc: "Kami menghadirkan desain antarmuka dan pengalaman pengguna yang intuitif, menarik, serta memudahkan interaksi dengan produk digital Anda.",
+                images: "/images/services/home/ui-ux.svg",
               },
               {
-                title: "Desain Logo",
+                title: "Logo Design",
                 desc: "Kami menciptakan identitas visual berupa logo yang unik, profesional, dan mampu merepresentasikan nilai serta visi bisnis Anda.",
+                images: "/images/services/home/logo.svg",
               },
               {
                 title: "Poster",
                 desc: "Kami merancang poster yang menarik dan informatif untuk keperluan promosi, acara, atau kampanye pemasaran Anda.",
+                images: "/images/services/home/poster.svg",
               },
             ].map((service) => (
               <motion.div key={service.title} variants={item}>
                 <Card className="bg-secondary h-full">
                   <CardContent>
-                    <div className="space-y-4">
-                      <h1 className="text-xl font-semibold">{service.title}</h1>
-                      <p className="text-muted-foreground">{service.desc}</p>
+                    <div className="space-y-8">
+                      <div className="space-y-4">
+                        <h1 className="text-xl font-semibold">
+                          {service.title}
+                        </h1>
+                        <p className="text-muted-foreground">{service.desc}</p>
+                      </div>
+                      <Image
+                        src={service.images}
+                        alt={service.title}
+                        width={500}
+                        height={300}
+                        className="md:max-h-[250px] max-h-[200px]"
+                      />
                     </div>
                   </CardContent>
                 </Card>
