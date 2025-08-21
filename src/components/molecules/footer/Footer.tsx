@@ -17,7 +17,11 @@ export default function Footer() {
           </Button>
 
           <div className="flex flex-wrap justify-center gap-8 md:gap-12">
-            <Link href={"#"} className="font-bold md:text-xl underline">
+            <Link
+              href={"https://www.instagram.com/creatify.indonesia"}
+              target="_blank"
+              className="font-bold md:text-xl underline"
+            >
               Instagram
             </Link>
             <Link href={"#"} className="font-bold md:text-xl underline">
@@ -37,7 +41,9 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/20 pad-x-xl py-6 flex flex-col md:flex-row justify-between items-center gap-4">
-        <h1 className="text-sm">© {year} Agency. All rights reserved.</h1>
+        <h1 className="text-sm">
+          © {year} Creatify Indonesia. All rights reserved.
+        </h1>
         <div className="flex gap-4 text-sm">
           <Link href={"#"} className="hover:underline">
             Terms of Service

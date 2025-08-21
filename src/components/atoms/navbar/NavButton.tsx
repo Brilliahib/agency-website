@@ -19,6 +19,7 @@ import {
 import { navItems } from "@/data/nav-item";
 import { useMemo } from "react";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 function MobileLink({
   href,
@@ -88,7 +89,13 @@ export default function NavButton() {
                 href="/"
                 className="flex items-center justify-center gap-2 text-left font-semibold"
               >
-                <h1 className="font-semibold uppercase font-inter">Creatify</h1>
+                <Image
+                  src={"/images/logo/creatify-logo.png"}
+                  alt="Creatify"
+                  width={100}
+                  height={100}
+                  className="max-w-[50px]"
+                />
               </Link>
             </SheetHeader>
             <nav className="px-6 space-y-2">
