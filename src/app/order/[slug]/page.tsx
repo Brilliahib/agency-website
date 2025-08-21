@@ -6,8 +6,9 @@ interface OrderDetailPageProps {
 }
 
 export const metadata: Metadata = {
-  title: "Order - Agency",
-  description: "Halaman harga untuk layanan kami.",
+  title: "Order - Creatify",
+  description:
+    "Lakukan pemesanan layanan digital Creatify dengan mudah dan cepat. Pilih paket sesuai kebutuhan bisnis Anda untuk website, aplikasi, atau desain kreatif.",
 };
 
 export default async function OrderDetailPage({

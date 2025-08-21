@@ -15,7 +15,7 @@ export default function HomeHero() {
       />
       <div className="absolute top-0 left-0 w-full h-full bg-black/40"></div>
       <div className="relative z-10 flex items-center justify-center h-full text-white text-center">
-        <div className="md:max-w-3xl md:space-y-8 space-y-6 sm:pad-x-xl">
+        <div className="md:max-w-3xl md:space-y-8 space-y-6 md:px-0 px-4">
           <h1 className="text-4xl md:text-6xl font-bold">
             Your One-Stop Solution for Digital Needs
           </h1>

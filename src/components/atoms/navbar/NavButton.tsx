@@ -88,7 +88,7 @@ export default function NavButton() {
                 href="/"
                 className="flex items-center justify-center gap-2 text-left font-semibold"
               >
-                <h1 className="font-semibold uppercase font-inter">Agency</h1>
+                <h1 className="font-semibold uppercase font-inter">Creatify</h1>
               </Link>
             </SheetHeader>
             <nav className="px-6 space-y-2">
