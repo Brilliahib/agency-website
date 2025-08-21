@@ -7,7 +7,7 @@ export default function HomeHero() {
     <section className="relative w-full h-screen -mt-[var(--navbar-height)]">
       <video
         className="absolute top-0 left-0 w-full h-full object-cover"
-        src="/videos/hero.mp4"
+        src="/videos/hero-2.mp4"
         autoPlay
         loop
         muted
