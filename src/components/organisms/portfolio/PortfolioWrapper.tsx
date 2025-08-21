@@ -1,10 +1,11 @@
 import Typography from "@/components/atoms/typography/Typography";
 import { Globe } from "lucide-react";
 import PortfolioList from "./PortfolioList";
+import PageContainer from "../container/PageContainer";
 
 export default function PortfolioWrapper() {
   return (
-    <div className="pad-x-xl space-y-12 py-30">
+    <PageContainer>
       <Typography
         title="Project Yang Sudah Diselesaikan"
         description="Berikut adalah beberapa proyek yang telah kami selesaikan dengan sukses."
@@ -12,6 +13,6 @@ export default function PortfolioWrapper() {
         badge="Portfolio Kami"
       />
       <PortfolioList />
-    </div>
+    </PageContainer>
   );
 }

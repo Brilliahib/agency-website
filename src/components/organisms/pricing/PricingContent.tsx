@@ -1,10 +1,11 @@
 import Typography from "@/components/atoms/typography/Typography";
 import { Crown } from "lucide-react";
 import PricingList from "./PricingList";
+import PageContainer from "../container/PageContainer";
 
 export default function PricingContent() {
   return (
-    <section className="pad-x-xl py-30 space-y-12">
+    <PageContainer>
       <Typography
         title="Daftar Harga"
         badge="Harga Murah Produk Mewah!"
@@ -13,6 +14,6 @@ export default function PricingContent() {
         icon={Crown}
       />
       <PricingList />
-    </section>
+    </PageContainer>
   );
 }

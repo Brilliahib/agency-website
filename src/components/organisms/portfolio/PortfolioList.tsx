@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
 const portfolios = [
   {
@@ -66,23 +67,32 @@ export default function PortfolioTabs() {
   return (
     <Tabs defaultValue="all" className="w-full">
       <div className="flex justify-center">
-        <TabsList className="mb-8 flex flex-wrap gap-4">
-          <TabsTrigger value="all">
-            <LayoutGrid /> Semua
-          </TabsTrigger>
-          <TabsTrigger value="web-landing-page">
-            <PanelsTopLeft /> Web Landing Page
-          </TabsTrigger>
-          <TabsTrigger value="web-application">
-            <Monitor /> Web Application
-          </TabsTrigger>
-          <TabsTrigger value="ui-ux">
-            <Smartphone /> UI/UX
-          </TabsTrigger>
-          <TabsTrigger value="logo">
-            <Globe /> Logo
-          </TabsTrigger>
-        </TabsList>
+        <ScrollArea className="w-full md:w-auto">
+          <TabsList className="mb-8 flex gap-4 w-max md:w-auto">
+            <TabsTrigger value="all" className="flex items-center gap-2">
+              <LayoutGrid /> Semua
+            </TabsTrigger>
+            <TabsTrigger
+              value="web-landing-page"
+              className="flex items-center gap-2"
+            >
+              <PanelsTopLeft /> Web Landing Page
+            </TabsTrigger>
+            <TabsTrigger
+              value="web-application"
+              className="flex items-center gap-2"
+            >
+              <Monitor /> Web Application
+            </TabsTrigger>
+            <TabsTrigger value="ui-ux" className="flex items-center gap-2">
+              <Smartphone /> UI/UX
+            </TabsTrigger>
+            <TabsTrigger value="logo" className="flex items-center gap-2">
+              <Globe /> Logo
+            </TabsTrigger>
+          </TabsList>
+          <ScrollBar orientation="horizontal" className="md:hidden" />
+        </ScrollArea>
       </div>
 
       <TabsContent value="all">

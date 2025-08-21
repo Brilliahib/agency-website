@@ -10,6 +10,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Info } from "lucide-react";
 import { useState } from "react";
 import DialogDetailInfoOrder from "@/components/atoms/dialog/DialogDetailInfoOrder";
+import PageContainer from "../container/PageContainer";
 
 interface OrderWrapperProps {
   slug: string;
@@ -53,7 +54,7 @@ export default function OrderWrapper({ slug }: OrderWrapperProps) {
 
   return (
     <>
-      <section className="pad-x-xl md:py-36 space-y-8">
+      <PageContainer>
         <div className="space-y-4">
           <div className="space-y-2">
             <h1 className="font-bold text-2xl font-inter">
@@ -124,7 +125,7 @@ export default function OrderWrapper({ slug }: OrderWrapperProps) {
             </form>
           </CardContent>
         </Card>
-      </section>
+      </PageContainer>
       <DialogDetailInfoOrder
         open={isDialogDetailOrderOpen}
         setOpen={setIsDialogDetailOrderOpen}

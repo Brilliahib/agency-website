@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/navigation-menu";
 
 export function NavLink() {
-  const [mainTitle, setMainTitle] = React.useState("Web Application");
+  const [mainTitle, setMainTitle] = React.useState("Website Development");
   const [mainDescription, setMainDescription] = React.useState(
     "Layanan pembuatan website profesional untuk meningkatkan bisnis Anda."
   );
@@ -75,10 +75,10 @@ export function NavLink() {
 
               <ListItem
                 href="/services/web"
-                title="Web Application"
+                title="Website Development"
                 onHover={() =>
                   handleHover(
-                    "Web Application",
+                    "Website Development",
                     "Layanan pembuatan website profesional untuk meningkatkan bisnis Anda.",
                     "/images/nav/web.jpg"
                   )
