@@ -51,11 +51,11 @@ export default function HomeService() {
           <div className="grid md:grid-cols-2 gap-6">
             {[
               {
-                title: "Aplikasi Mobile",
+                title: "Mobile Application",
                 desc: "Tim kreatif kami berfokus pada pembuatan aplikasi mobile yang mudah digunakan, interaktif, dan mampu meningkatkan keterlibatan serta pertumbuhan bisnis Anda.",
               },
               {
-                title: "Website",
+                title: "Website Development",
                 desc: "Kami merancang dan mengembangkan website yang modern, responsif, dan berorientasi pada pengalaman pengguna untuk mendukung kehadiran digital bisnis Anda.",
               },
             ].map((service) => (
@@ -83,8 +83,8 @@ export default function HomeService() {
                 desc: "Kami menciptakan identitas visual berupa logo yang unik, profesional, dan mampu merepresentasikan nilai serta visi bisnis Anda.",
               },
               {
-                title: "Branding & Marketing",
-                desc: "Kami membantu memperkuat citra merek serta merancang strategi pemasaran kreatif untuk meningkatkan visibilitas dan daya tarik bisnis Anda di dunia digital.",
+                title: "Poster",
+                desc: "Kami merancang poster yang menarik dan informatif untuk keperluan promosi, acara, atau kampanye pemasaran Anda.",
               },
             ].map((service) => (
               <motion.div key={service.title} variants={item}>

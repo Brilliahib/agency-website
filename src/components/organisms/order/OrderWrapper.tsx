@@ -69,7 +69,7 @@ export default function OrderWrapper({ slug }: OrderWrapperProps) {
             className="rounded-md"
             onClick={handleDialogOpen}
           >
-            <Info />
+            <Info className="text-primary" />
             Lihat Info Order
           </Button>
         </div>

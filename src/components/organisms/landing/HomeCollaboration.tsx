@@ -79,7 +79,7 @@ export default function HomeCollaboration() {
                 <Card className="bg-secondary">
                   <CardContent className="space-y-4">
                     <div className="flex items-center gap-4">
-                      <div className="bg-white p-4 rounded-xl w-fit border">
+                      <div className="bg-primary p-4 rounded-xl w-fit border text-white">
                         {service.icon}
                       </div>
                       <h1 className="text-xl font-semibold">{service.title}</h1>

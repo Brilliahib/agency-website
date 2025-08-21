@@ -1,13 +1,13 @@
 export const navItems = [
   {
     title: "Mobile Application",
-    href: "/services/mobile-application",
-    pathname: "/services/mobile-application",
+    href: "/services/mobile",
+    pathname: "/services/mobile",
   },
   {
     title: "Web Application",
-    href: "/services/web-application",
-    pathname: "/services/web-application",
+    href: "/services/web",
+    pathname: "/services/web",
   },
   {
     title: "UI/UX",
