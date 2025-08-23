@@ -27,7 +27,7 @@ const notoSans = Noto_Sans({
 
 export const metadata: Metadata = {
   title:
-    "Creatify Agency - Jasa Website, Mobile App, UI/UX, Branding & Logo Profesional",
+    "Creatify Agency Verry Professional - Jasa Website, Mobile App, UI/UX, Branding & Logo Profesional",
   description:
     "Creatify adalah agency digital kreatif yang menyediakan jasa pembuatan website, aplikasi mobile, desain UI/UX, logo, poster, dan branding untuk bisnis Anda. Solusi lengkap, profesional, dan hasil memukau untuk kebutuhan digital Anda.",
   keywords: [
