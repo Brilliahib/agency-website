@@ -33,7 +33,7 @@ export default function HomeCollaboration() {
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: false, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="h-full relative rounded-3xl overflow-hidden"
         >
@@ -50,7 +50,7 @@ export default function HomeCollaboration() {
           className="space-y-6 flex flex-col justify-center"
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
           variants={container}
         >
           <motion.h1 variants={item} className="font-bold text-4xl">

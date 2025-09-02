@@ -33,7 +33,7 @@ export default function HomeProject() {
           className="flex justify-between flex-col md:flex-row gap-6 md:gap-0"
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
           variants={container}
         >
           <motion.h1 variants={item} className="font-bold text-4xl leading-12">
@@ -53,7 +53,7 @@ export default function HomeProject() {
           className="grid gap-6 md:grid-cols-3 place-items-center"
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
           variants={container}
         >
           {[

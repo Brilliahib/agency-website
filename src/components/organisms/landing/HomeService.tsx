@@ -37,7 +37,7 @@ export default function HomeService() {
           variants={container}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
           className="flex flex-col gap-6"
         >
           <motion.div variants={item}>

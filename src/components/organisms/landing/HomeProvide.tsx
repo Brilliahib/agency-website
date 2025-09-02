@@ -33,7 +33,7 @@ export default function HomeProvide() {
           className="space-y-6"
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
           variants={container}
         >
           <motion.h1 variants={item} className="text-4xl font-bold">
@@ -76,7 +76,7 @@ export default function HomeProvide() {
         <motion.div
           initial={{ opacity: 0, x: 50, scale: 0.95 }}
           whileInView={{ opacity: 1, x: 0, scale: 1 }}
-          viewport={{ once: false, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <Image
