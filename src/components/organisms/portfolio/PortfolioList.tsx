@@ -5,6 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Globe,
   LayoutGrid,
+  LucideIcon,
   Monitor,
   PanelsTopLeft,
   Smartphone,
@@ -12,55 +13,62 @@ import {
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import { Badge } from "@/components/ui/badge";
 
 const portfolios = [
   {
-    src: "/images/portfolio/portfolio-1.png",
-    alt: "Portfolio 1",
-    category: "web-landing-page",
+    src: "/images/portfolio/charingcub.png",
+    alt: "Charing Cub",
+    categories: ["web-application"],
+    logo: "/images/portfolio/logo/charingcub.png",
   },
   {
-    src: "/images/portfolio/portfolio-2.png",
-    alt: "Portfolio 2",
-    category: "web-landing-page",
+    src: "/images/portfolio/dopamind.png",
+    alt: "Dopamind +",
+    categories: ["web-landing-page", "mobile-app"],
+    logo: "/images/portfolio/logo/dopamind.jpg",
   },
   {
-    src: "/images/portfolio/portfolio-3.png",
-    alt: "Portfolio 3",
-    category: "web-application",
+    src: "/images/portfolio/fst.png",
+    alt: "Forum Studi Teknik UNDIP",
+    categories: ["web-landing-page"],
+    logo: "/images/portfolio/logo/fst.png",
   },
   {
-    src: "/images/portfolio/portfolio-4.png",
-    alt: "Portfolio 4",
-    category: "web-application",
+    src: "/images/portfolio/meddiscus.png",
+    alt: "Meddiscus",
+    categories: ["web-application"],
+    logo: "/images/portfolio/logo/meddiscus.jpeg",
   },
   {
-    src: "/images/portfolio/portfolio-5.png",
-    alt: "Portfolio 5",
-    category: "ui-ux",
-  },
-  {
-    src: "/images/portfolio/portfolio-6.png",
-    alt: "Portfolio 6",
-    category: "ui-ux",
-  },
-  {
-    src: "/images/portfolio/portfolio-7.png",
-    alt: "Portfolio 7",
-    category: "logo",
-  },
-  {
-    src: "/images/portfolio/portfolio-8.png",
-    alt: "Portfolio 8",
-    category: "logo",
-  },
-  {
-    src: "/images/portfolio/portfolio-9.png",
-    alt: "Portfolio 9",
-    category: "logo",
+    src: "/images/portfolio/pkpri.png",
+    alt: "PKP RI Surakarta",
+    categories: ["web-landing-page"],
+    logo: "/images/portfolio/logo/pkpri.png",
   },
 ];
 
+type CategoryKey =
+  | "all"
+  | "web-landing-page"
+  | "web-application"
+  | "ui-ux"
+  | "logo"
+  | "mobile-app";
+
+interface Category {
+  label: string;
+  icon: LucideIcon;
+}
+
+const categories: Record<CategoryKey, Category> = {
+  all: { label: "Semua", icon: LayoutGrid },
+  "web-landing-page": { label: "Web Landing Page", icon: PanelsTopLeft },
+  "web-application": { label: "Web Application", icon: Monitor },
+  "ui-ux": { label: "UI/UX", icon: Smartphone },
+  logo: { label: "Logo", icon: Globe },
+  "mobile-app": { label: "Mobile App", icon: Smartphone },
+};
 export default function PortfolioTabs() {
   const MotionCard = motion(Card);
 
@@ -69,95 +77,106 @@ export default function PortfolioTabs() {
       <div className="flex justify-center">
         <ScrollArea className="w-full md:w-auto">
           <TabsList className="mb-8 flex gap-4 w-max md:w-auto">
-            <TabsTrigger value="all" className="flex items-center gap-2">
-              <LayoutGrid /> Semua
-            </TabsTrigger>
-            <TabsTrigger
-              value="web-landing-page"
-              className="flex items-center gap-2"
-            >
-              <PanelsTopLeft /> Web Landing Page
-            </TabsTrigger>
-            <TabsTrigger
-              value="web-application"
-              className="flex items-center gap-2"
-            >
-              <Monitor /> Web Application
-            </TabsTrigger>
-            <TabsTrigger value="ui-ux" className="flex items-center gap-2">
-              <Smartphone /> UI/UX
-            </TabsTrigger>
-            <TabsTrigger value="logo" className="flex items-center gap-2">
-              <Globe /> Logo
-            </TabsTrigger>
+            {Object.entries(categories).map(([slug, { label, icon: Icon }]) => (
+              <TabsTrigger
+                key={slug}
+                value={slug}
+                className="flex items-center gap-2"
+              >
+                <Icon className="w-4 h-4" /> {label}
+              </TabsTrigger>
+            ))}
           </TabsList>
           <ScrollBar orientation="horizontal" className="md:hidden" />
         </ScrollArea>
       </div>
 
+      {/* Semua */}
       <TabsContent value="all">
-        <div className="grid md:grid-cols-3 grid-cols-1 gap-6">
+        <div className="grid md:grid-cols-3 grid-cols-1 gap-6 place-items-center">
           {portfolios.map((portfolio, i) => (
             <MotionCard
               key={portfolio.alt}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: i * 0.1 }}
-              whileHover={{ scale: 1.03 }}
+              transition={{ duration: 0.4, ease: "easeOut", delay: i * 0.1 }}
+              whileHover={{ scale: 1.02 }}
               className="overflow-hidden"
             >
-              <CardContent>
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <Image
-                    src={portfolio.src}
-                    alt={portfolio.alt}
-                    width={1000}
-                    height={1000}
-                    className="rounded-md transition-transform duration-300"
-                  />
-                </motion.div>
+              <CardContent className="space-y-4">
+                <Image
+                  src={portfolio.src}
+                  alt={portfolio.alt}
+                  width={1000}
+                  height={1000}
+                  className="rounded-md"
+                />
+                <div className="flex flex-wrap gap-2">
+                  {portfolio.categories.map((slug) => {
+                    const category = categories[slug as CategoryKey];
+                    return (
+                      <Badge key={slug} className="px-3 rounded-full">
+                        {category ? category.label : slug}
+                      </Badge>
+                    );
+                  })}
+                </div>
+                <h1 className="text-lg font-semibold">{portfolio.alt}</h1>
               </CardContent>
             </MotionCard>
           ))}
         </div>
       </TabsContent>
 
-      {["web-landing-page", "web-application", "ui-ux", "logo"].map((cat) => (
-        <TabsContent key={cat} value={cat}>
-          <div className="grid md:grid-cols-3 grid-cols-1 gap-6">
-            {portfolios
-              .filter((p) => p.category === cat)
-              .map((portfolio, i) => (
-                <MotionCard
-                  key={portfolio.alt}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: i * 0.1 }}
-                  whileHover={{ scale: 1.03 }}
-                  className="overflow-hidden"
-                >
-                  <CardContent>
-                    <motion.div
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 0.3 }}
-                    >
+      {/* Per kategori */}
+      {Object.keys(categories)
+        .filter((slug) => slug !== "all")
+        .map((slug) => (
+          <TabsContent key={slug} value={slug}>
+            <div className="grid md:grid-cols-3 grid-cols-1 gap-6 place-items-center">
+              {portfolios
+                .filter((p) => p.categories.includes(slug))
+                .map((portfolio, i) => (
+                  <MotionCard
+                    key={portfolio.alt}
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.4,
+                      ease: "easeOut",
+                      delay: i * 0.1,
+                    }}
+                    whileHover={{ scale: 1.02 }}
+                    className="overflow-hidden"
+                  >
+                    <CardContent className="space-y-4">
                       <Image
                         src={portfolio.src}
                         alt={portfolio.alt}
                         width={1000}
                         height={1000}
-                        className="rounded-md transition-transform duration-300"
+                        className="rounded-md"
                       />
-                    </motion.div>
-                  </CardContent>
-                </MotionCard>
-              ))}
-          </div>
-        </TabsContent>
-      ))}
+
+                      {/* Badges kategori */}
+                      <div className="flex flex-wrap gap-2">
+                        {portfolio.categories.map((slug) => {
+                          const category = categories[slug as CategoryKey];
+                          return (
+                            <Badge key={slug} className="px-3 rounded-full">
+                              {category ? category.label : slug}
+                            </Badge>
+                          );
+                        })}
+                      </div>
+
+                      <h1 className="text-lg font-semibold">{portfolio.alt}</h1>
+                    </CardContent>
+                  </MotionCard>
+                ))}
+            </div>
+          </TabsContent>
+        ))}
     </Tabs>
   );
 }

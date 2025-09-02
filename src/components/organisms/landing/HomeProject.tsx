@@ -49,33 +49,34 @@ export default function HomeProject() {
           </motion.p>
         </motion.div>
 
-        {/* Projects Grid */}
         <motion.div
-          className="grid md:grid-cols-2 gap-8"
+          className="grid gap-6 md:grid-cols-3 place-items-center"
           initial="hidden"
           whileInView="show"
           viewport={{ once: false, amount: 0.2 }}
           variants={container}
         >
           {[
-            { src: "/images/project/project-1.png", alt: "Proyek 1" },
-            { src: "/images/project/project-2.png", alt: "Proyek 2" },
-            { src: "/images/project/project-3.png", alt: "Proyek 3" },
-            { src: "/images/project/project-4.png", alt: "Proyek 4" },
+            { src: "/images/portfolio/charingcub.png", alt: "Proyek 1" },
+            { src: "/images/portfolio/dopamind.png", alt: "Proyek 2" },
+            { src: "/images/portfolio/fst.png", alt: "Proyek 3" },
+            { src: "/images/portfolio/meddiscus.png", alt: "Proyek 4" },
+            { src: "/images/portfolio/pkpri.png", alt: "Proyek 5" },
           ].map((proj) => (
             <motion.div
               key={proj.alt}
               variants={item}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
+              className="w-full flex justify-center"
             >
               <Image
                 src={proj.src}
-                width={1000}
-                height={1000}
+                width={500}
+                height={500}
                 alt={proj.alt}
-                className="rounded-3xl"
+                className="rounded-xl"
               />
             </motion.div>
           ))}
