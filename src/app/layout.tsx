@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Figtree, Inter, Noto_Sans } from "next/font/google";
+import { Figtree, Inter, Noto_Sans, Rubik } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/organisms/navbar/Navbar";
 import Footer from "@/components/molecules/footer/Footer";
 
-const figtree = Figtree({
-  variable: "--font-figtree",
+const rubik = Rubik({
+  variable: "--font-rubik",
   subsets: ["latin"],
   display: "swap",
   weight: ["300", "400", "500", "600", "700", "800", "900"],
@@ -69,7 +69,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${figtree.variable} ${inter.variable} ${notoSans.variable} antialiased font-figtree`}
+        className={`${rubik.variable} ${inter.variable} ${notoSans.variable} antialiased font-rubik`}
       >
         <Navbar />
         <main className="overflow-hidden">{children}</main>

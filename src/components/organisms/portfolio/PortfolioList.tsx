@@ -46,6 +46,36 @@ const portfolios = [
     categories: ["web-landing-page"],
     logo: "/images/portfolio/logo/pkpri.png",
   },
+  {
+    src: "/images/portfolio/vintagee.png",
+    alt: "Vintagee",
+    categories: ["web-application"],
+    logo: "/images/portfolio/logo/vintagee.png",
+  },
+  {
+    src: "/images/portfolio/codelingo.png",
+    alt: "Codelingo",
+    categories: ["web-application"],
+    logo: "/images/portfolio/logo/codelingo.png",
+  },
+  {
+    src: "/images/portfolio/dialisis.png",
+    alt: "Dialisis Connect Edu",
+    categories: ["web-landing-page"],
+    logo: "/images/portfolio/logo/dialisis.png",
+  },
+  {
+    src: "/images/portfolio/ihealth.png",
+    alt: "iHealth Edu",
+    categories: ["web-application"],
+    logo: "/images/portfolio/logo/ihealth.png",
+  },
+  {
+    src: "/images/portfolio/tumbuh-sahabat.png",
+    alt: "Tumbuh Sahabat",
+    categories: ["web-application"],
+    logo: "/images/portfolio/logo/tumbuh-sahabat.png",
+  },
 ];
 
 type CategoryKey =

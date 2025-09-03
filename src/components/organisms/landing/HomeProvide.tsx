@@ -56,7 +56,7 @@ export default function HomeProvide() {
             className="grid grid-cols-3 gap-6 md:gap-0 md:mt-8"
           >
             {[
-              { value: "120+", label: "Proyek" },
+              { value: "15+", label: "Proyek" },
               { value: "50+", label: "Ulasan" },
               { value: "2+", label: "Tahun Pengalaman" },
             ].map((stat) => (

@@ -11,7 +11,7 @@ export const pricingData: PricingItem[] = [
     title: "Mobile Application",
     slug: "mobile-application",
     description: "Pembuatan aplikasi mobile untuk Android.",
-    price: "Rp. 1.000.000",
+    price: "Rp. 2.500.000",
     features: [
       "Revisi hingga 7x",
       "Publikasi ke Play Store",

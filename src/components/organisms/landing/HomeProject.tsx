@@ -57,11 +57,18 @@ export default function HomeProject() {
           variants={container}
         >
           {[
-            { src: "/images/portfolio/charingcub.png", alt: "Proyek 1" },
-            { src: "/images/portfolio/dopamind.png", alt: "Proyek 2" },
-            { src: "/images/portfolio/fst.png", alt: "Proyek 3" },
-            { src: "/images/portfolio/meddiscus.png", alt: "Proyek 4" },
-            { src: "/images/portfolio/pkpri.png", alt: "Proyek 5" },
+            { src: "/images/portfolio/charingcub.png", alt: "Charing Cub" },
+            { src: "/images/portfolio/dopamind.png", alt: "Dopamind +" },
+            {
+              src: "/images/portfolio/tumbuh-sahabat.png",
+              alt: "Tumbuh Sahabt",
+            },
+            { src: "/images/portfolio/meddiscus.png", alt: "Meddiscus" },
+            {
+              src: "/images/portfolio/dialisis.png",
+              alt: "Dialisis Connect Edu",
+            },
+            { src: "/images/portfolio/vintagee.png", alt: "Vintagee" },
           ].map((proj) => (
             <motion.div
               key={proj.alt}
