@@ -6,12 +6,14 @@ import HomeService from "@/components/organisms/landing/HomeService";
 
 export default function Home() {
   return (
-    <div className="space-y-24 md:space-y-30">
+    <section>
       <HomeHero />
-      <HomeService />
-      <HomeCollaboration />
-      <HomeProvide />
-      <HomeProject />
-    </div>
+      <div className="space-y-24 md:space-y-30">
+        <HomeService />
+        <HomeCollaboration />
+        <HomeProvide />
+        <HomeProject />
+      </div>
+    </section>
   );
 }

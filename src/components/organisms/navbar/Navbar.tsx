@@ -39,13 +39,9 @@ export default function Navbar() {
   return (
     <div
       className={`fixed top-0 left-0 z-50 w-full transition-all duration-500
-    ${showNavbar ? "translate-y-0" : "-translate-y-full"}
-    ${
-      pathname === "/" && isTop
-        ? "bg-white/10 backdrop-blur-lg"
-        : "bg-white border-b"
-    }
-  `}
+        ${showNavbar ? "translate-y-0" : "-translate-y-full"}
+        ${isTop ? "bg-transparent border-none shadow-none" : "bg-white"}
+      `}
     >
       <div className="pad-x-xl flex justify-between py-4">
         <NavL />

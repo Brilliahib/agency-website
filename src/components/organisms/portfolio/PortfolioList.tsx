@@ -11,7 +11,7 @@ import {
   Smartphone,
 } from "lucide-react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Badge } from "@/components/ui/badge";
 
@@ -61,7 +61,7 @@ const portfolios = [
   {
     src: "/images/portfolio/dialisis.png",
     alt: "Dialisis Connect Edu",
-    categories: ["web-landing-page"],
+    categories: ["web-application"],
     logo: "/images/portfolio/logo/dialisis.png",
   },
   {
@@ -75,6 +75,24 @@ const portfolios = [
     alt: "Tumbuh Sahabat",
     categories: ["web-application"],
     logo: "/images/portfolio/logo/tumbuh-sahabat.png",
+  },
+  {
+    src: "/images/portfolio/lamemba.png",
+    alt: "Lamemba",
+    categories: ["logo"],
+    logo: "/images/portfolio/logo/lamemba.png",
+  },
+  {
+    src: "/images/portfolio/rsud.png",
+    alt: "RSUD KRT. Setjonegoro",
+    categories: ["logo"],
+    logo: "/images/portfolio/logo/rsud.png",
+  },
+  {
+    src: "/images/portfolio/rpk.png",
+    alt: "Rumah Pangan Kita",
+    categories: ["logo"],
+    logo: "/images/portfolio/logo/rpk.png",
   },
 ];
 
@@ -99,8 +117,67 @@ const categories: Record<CategoryKey, Category> = {
   logo: { label: "Logo", icon: Globe },
   "mobile-app": { label: "Mobile App", icon: Smartphone },
 };
+
+const container: Variants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const item: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { ease: "easeOut", duration: 0.6 } },
+};
+
 export default function PortfolioTabs() {
   const MotionCard = motion(Card);
+
+  const renderCards = (filtered: typeof portfolios) => (
+    <motion.div
+      variants={container}
+      initial="hidden"
+      animate="show"
+      className="grid md:grid-cols-3 grid-cols-1 gap-6 md:gap-y-12 place-items-center"
+    >
+      {filtered.map((portfolio) => (
+        <MotionCard
+          key={portfolio.alt}
+          variants={item}
+          whileHover={{
+            scale: 1.02,
+            transition: { type: "spring", stiffness: 250, damping: 20 },
+          }}
+          className="overflow-hidden p-0 shadow-none border-0"
+        >
+          <CardContent className="space-y-4 p-0">
+            <Image
+              src={portfolio.src}
+              alt={portfolio.alt}
+              width={1000}
+              height={1000}
+              className="rounded-md"
+            />
+            <div className="flex flex-wrap gap-2">
+              {portfolio.categories.map((slug) => {
+                const category = categories[slug as CategoryKey];
+                return (
+                  <Badge key={slug} className="px-3 rounded-full">
+                    {category ? category.label : slug}
+                  </Badge>
+                );
+              })}
+            </div>
+            <h1 className="text-lg font-semibold">{portfolio.alt}</h1>
+          </CardContent>
+        </MotionCard>
+      ))}
+    </motion.div>
+  );
 
   return (
     <Tabs defaultValue="all" className="w-full">
@@ -122,89 +199,14 @@ export default function PortfolioTabs() {
       </div>
 
       {/* Semua */}
-      <TabsContent value="all">
-        <div className="grid md:grid-cols-3 grid-cols-1 gap-6 place-items-center">
-          {portfolios.map((portfolio, i) => (
-            <MotionCard
-              key={portfolio.alt}
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, ease: "easeOut", delay: i * 0.1 }}
-              whileHover={{ scale: 1.02 }}
-              className="overflow-hidden"
-            >
-              <CardContent className="space-y-4">
-                <Image
-                  src={portfolio.src}
-                  alt={portfolio.alt}
-                  width={1000}
-                  height={1000}
-                  className="rounded-md"
-                />
-                <div className="flex flex-wrap gap-2">
-                  {portfolio.categories.map((slug) => {
-                    const category = categories[slug as CategoryKey];
-                    return (
-                      <Badge key={slug} className="px-3 rounded-full">
-                        {category ? category.label : slug}
-                      </Badge>
-                    );
-                  })}
-                </div>
-                <h1 className="text-lg font-semibold">{portfolio.alt}</h1>
-              </CardContent>
-            </MotionCard>
-          ))}
-        </div>
-      </TabsContent>
+      <TabsContent value="all">{renderCards(portfolios)}</TabsContent>
 
       {/* Per kategori */}
       {Object.keys(categories)
         .filter((slug) => slug !== "all")
         .map((slug) => (
           <TabsContent key={slug} value={slug}>
-            <div className="grid md:grid-cols-3 grid-cols-1 gap-6 place-items-center">
-              {portfolios
-                .filter((p) => p.categories.includes(slug))
-                .map((portfolio, i) => (
-                  <MotionCard
-                    key={portfolio.alt}
-                    initial={{ opacity: 0, y: 15 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{
-                      duration: 0.4,
-                      ease: "easeOut",
-                      delay: i * 0.1,
-                    }}
-                    whileHover={{ scale: 1.02 }}
-                    className="overflow-hidden"
-                  >
-                    <CardContent className="space-y-4">
-                      <Image
-                        src={portfolio.src}
-                        alt={portfolio.alt}
-                        width={1000}
-                        height={1000}
-                        className="rounded-md"
-                      />
-
-                      {/* Badges kategori */}
-                      <div className="flex flex-wrap gap-2">
-                        {portfolio.categories.map((slug) => {
-                          const category = categories[slug as CategoryKey];
-                          return (
-                            <Badge key={slug} className="px-3 rounded-full">
-                              {category ? category.label : slug}
-                            </Badge>
-                          );
-                        })}
-                      </div>
-
-                      <h1 className="text-lg font-semibold">{portfolio.alt}</h1>
-                    </CardContent>
-                  </MotionCard>
-                ))}
-            </div>
+            {renderCards(portfolios.filter((p) => p.categories.includes(slug)))}
           </TabsContent>
         ))}
     </Tabs>
