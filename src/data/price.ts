@@ -6,7 +6,7 @@ export interface PricingItem {
   features: string[];
 }
 
-export const pricingData: PricingItem[] = [
+export const pricingUmum: PricingItem[] = [
   {
     title: "Mobile Application",
     slug: "mobile-application",
@@ -48,7 +48,7 @@ export const pricingData: PricingItem[] = [
     price: "Rp. 2.500.000",
     features: [
       "Revisi hingga 10x",
-      "Gratis domain & server VPS 1 tahun",
+      "Gratis domain & server VPS / hosting 1 tahun",
       "Integrasi API & database",
       "Manajemen user & autentikasi",
       "UI/UX interaktif & modern",
@@ -93,3 +93,28 @@ export const pricingData: PricingItem[] = [
     ],
   },
 ];
+
+export const pricingMahasiswa: PricingItem[] = [
+  {
+    ...pricingUmum[0],
+    price: "Rp. 1.500.000",
+  },
+  {
+    ...pricingUmum[1],
+    price: "Rp. 450.000",
+  },
+  {
+    ...pricingUmum[2],
+    price: "Rp. 1.000.000",
+  },
+  {
+    ...pricingUmum[3],
+    price: "Rp. 250.000",
+  },
+  {
+    ...pricingUmum[4],
+    price: "Rp. 500.000",
+  },
+];
+
+export const pricingData: PricingItem[] = [...pricingUmum, ...pricingMahasiswa];

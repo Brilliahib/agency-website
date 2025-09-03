@@ -2,14 +2,15 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { pricingData } from "@/data/price";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { pricingUmum, pricingMahasiswa } from "@/data/price";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-export default function PricingList() {
+function PricingCards({ data }: { data: typeof pricingUmum }) {
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {pricingData.map((item, index) => (
+      {data.map((item, index) => (
         <motion.div
           key={index}
           initial={{ opacity: 0, y: 40 }}
@@ -50,5 +51,25 @@ export default function PricingList() {
         </motion.div>
       ))}
     </div>
+  );
+}
+
+export default function PricingList() {
+  return (
+    <Tabs defaultValue="mahasiswa" className="space-y-4">
+      <div className="flex justify-center">
+        <TabsList className="max-w-[300px] w-full">
+          <TabsTrigger value="mahasiswa">Mahasiswa</TabsTrigger>
+          <TabsTrigger value="umum">Umum</TabsTrigger>
+        </TabsList>
+      </div>
+
+      <TabsContent value="umum">
+        <PricingCards data={pricingUmum} />
+      </TabsContent>
+      <TabsContent value="mahasiswa">
+        <PricingCards data={pricingMahasiswa} />
+      </TabsContent>
+    </Tabs>
   );
 }

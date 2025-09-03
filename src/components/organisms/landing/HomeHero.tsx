@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
+import Link from "next/link";
 
 export default function HomeHero() {
   const container: Variants = {
@@ -54,8 +55,8 @@ export default function HomeHero() {
             </motion.p>
 
             <motion.div variants={item}>
-              <Button className="rounded-md" size={"lg"}>
-                Lihat Selengkapnya
+              <Button className="rounded-md" size={"lg"} asChild>
+                <Link href={"/pricing"}>Lihat Selengkapnya</Link>
               </Button>
             </motion.div>
           </motion.div>

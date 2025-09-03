@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
-import { pricingData } from "@/data/price";
+import { pricingData, pricingMahasiswa, pricingUmum } from "@/data/price";
 import { Card, CardContent } from "@/components/ui/card";
 import { Info } from "lucide-react";
 import { useState } from "react";
@@ -25,7 +25,10 @@ interface OrderFormValues {
 }
 
 export default function OrderWrapper({ slug }: OrderWrapperProps) {
-  const priceItem = pricingData.find((item) => item.slug === slug);
+  const priceItem =
+    pricingUmum.find((item) => item.slug === slug) ||
+    pricingMahasiswa.find((item) => item.slug === slug);
+
   const { register, handleSubmit, reset } = useForm<OrderFormValues>();
   const [isDialogDetailOrderOpen, setIsDialogDetailOrderOpen] = useState(false);
 
