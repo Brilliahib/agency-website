@@ -142,7 +142,7 @@ export default function PortfolioTabs() {
       variants={container}
       initial="hidden"
       animate="show"
-      className="grid md:grid-cols-3 grid-cols-1 gap-6 md:gap-y-12 place-items-center"
+      className="grid md:grid-cols-3 grid-cols-1 gap-6 md:gap-y-12 gap-y-10 place-items-center"
     >
       {filtered.map((portfolio) => (
         <MotionCard

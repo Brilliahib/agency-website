@@ -23,7 +23,6 @@ export default function HomeHero() {
 
   return (
     <section className="w-full justify-center items-center h-screen relative overflow-hidden">
-      {/* background blur */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute md:flex hidden top-20 left-10 w-72 h-72 bg-primary/40 rounded-full blur-[120px]" />
         <div className="absolute md:flex hidden bottom-80 right-20 w-96 h-96 bg-primary/30 rounded-full blur-[150px]" />
