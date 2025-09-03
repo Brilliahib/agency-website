@@ -31,7 +31,7 @@ export default function Footer() {
       <div className="pad-x-xl py-16 flex justify-center relative">
         <div className="flex flex-col items-center text-center space-y-8 md:space-y-16 max-w-2xl">
           <h1 className="md:text-4xl text-2xl font-bold leading-snug">
-            Explore your potential and begin your journey today.
+            Your One-Stop Solution for Digital Needs.
           </h1>
 
           <Button
@@ -81,9 +81,6 @@ export default function Footer() {
           </Link>
           <Link href={"#"} className="hover:underline">
             Privacy Policy
-          </Link>
-          <Link href={"#"} className="hover:underline">
-            Cookie Policy
           </Link>
         </div>
       </div>
