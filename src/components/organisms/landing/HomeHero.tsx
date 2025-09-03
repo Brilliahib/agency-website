@@ -67,7 +67,7 @@ export default function HomeHero() {
         alt="Mockup"
         width={700}
         height={700}
-        className="absolute md:flex hidden bottom-0 right-0 md:w-[580px] w-[350px] object-contain pointer-events-none"
+        className="absolute md:flex hidden bottom-0 right-0 md:w-[39%] object-contain pointer-events-none"
       />
     </section>
   );
