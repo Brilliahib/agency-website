@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Figtree, Inter, Noto_Sans, Rubik } from "next/font/google";
+import { Inter, Noto_Sans, Rubik } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/organisms/navbar/Navbar";
 import Footer from "@/components/molecules/footer/Footer";
