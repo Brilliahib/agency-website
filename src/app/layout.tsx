@@ -27,9 +27,9 @@ const notoSans = Noto_Sans({
 
 export const metadata: Metadata = {
   title:
-    "Creatify Agency - Jasa Website, Mobile App, UI/UX, Branding & Logo Profesional",
+    "Creatify - Jasa Pembuatan Website, Mobile App, UI/UX, Branding & Logo Profesional",
   description:
-    "Creatify adalah agency digital kreatif yang menyediakan jasa pembuatan website, aplikasi mobile, desain UI/UX, logo, poster, dan branding untuk bisnis Anda. Solusi lengkap, profesional, dan hasil memukau untuk kebutuhan digital Anda.",
+    "Creatify adalah jasa digital kreatif yang menyediakan jasa pembuatan website, aplikasi mobile, desain UI/UX, logo, poster, dan branding untuk bisnis Anda. Solusi lengkap, profesional, dan hasil memukau untuk kebutuhan digital Anda.",
   keywords: [
     "jasa pembuatan website",
     "jasa aplikasi mobile",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     "jasa logo profesional",
     "branding bisnis",
     "jasa poster",
-    "agency digital kreatif",
+    "digital kreatif",
     "jasa web design Indonesia",
     "jasa mobile app development",
     "jasa desain grafis",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Creatify Indonesia",
     description:
-      "Website, Mobile App, UI/UX, Logo, Branding — semua dalam satu agency digital kreatif bernama Creatify.",
+      "Creatify adalah jasa digital kreatif yang menyediakan jasa pembuatan website, aplikasi mobile, desain UI/UX, logo, poster, dan branding untuk bisnis Anda. Solusi lengkap, profesional, dan hasil memukau untuk kebutuhan digital Anda.",
     url: "https://www.creatify.id",
     siteName: "Creatify Indonesia",
     images: [
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
         url: "https://creatify-id.vercel.app/images/logo/creatify-logo.png",
         width: 1200,
         height: 630,
-        alt: "Creatify - Solusi Digital Lengkap untuk Bisnis Anda",
+        alt: "Creatify - Jasa Pembuatan Website, Mobile App, UI/UX, Branding & Logo Profesional",
       },
     ],
     locale: "id_ID",

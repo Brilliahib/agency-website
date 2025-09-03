@@ -44,7 +44,7 @@ export default function HomeService() {
             <Typography
               badge="Solusi Kami"
               icon={Crown}
-              title="Layanan Digital Agency Kami"
+              title="Layanan Digital Kami"
               description="Kami menyediakan berbagai solusi digital mulai dari desain web responsif, pengembangan aplikasi, strategi pemasaran digital."
             />
           </motion.div>
