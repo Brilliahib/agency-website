@@ -1,3 +1,4 @@
+import WhatsAppButton from "@/components/atoms/button/ButtonWhatsapp";
 import LandingCTA from "@/components/molecules/CTA/LandingCTA";
 import HomeCollaboration from "@/components/organisms/landing/HomeCollaboration";
 import HomeHero from "@/components/organisms/landing/HomeHero";
@@ -15,6 +16,7 @@ export default function Home() {
         <HomeProvide />
         <LandingCTA />
         <HomeProject />
+        <WhatsAppButton />
       </div>
     </section>
   );
