@@ -70,7 +70,9 @@ export default function NavButton() {
       </div>
 
       <div className="flex items-center md:hidden md:gap-0 gap-2">
-        <Button className="rounded-md font-semibold">Let&apos;s talk</Button>
+        <Button className="rounded-md font-semibold" asChild>
+          <Link href="/contact">Let&apos;s talk</Link>
+        </Button>
         <Sheet>
           {/* Hamburger */}
           <SheetTrigger asChild>
