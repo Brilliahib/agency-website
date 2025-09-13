@@ -6,6 +6,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { pricingUmum, pricingMahasiswa } from "@/data/price";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
+import { Star } from "lucide-react";
 
 function PricingCards({ data }: { data: typeof pricingUmum }) {
   return (
@@ -23,10 +25,33 @@ function PricingCards({ data }: { data: typeof pricingUmum }) {
           viewport={{ once: true }}
         >
           <Link href={`/order/${item.slug}`}>
-            <Card className="bg-secondary flex flex-col justify-between h-full">
+            <Card
+              className={`flex flex-col justify-between h-full md:relative ${
+                item.is_popular
+                  ? "border border-primary bg-secondary"
+                  : "bg-secondary"
+              }`}
+            >
               <CardContent className="space-y-6">
+                {item.is_popular && (
+                  <div className="md:absolute top-3 right-3 z-10">
+                    <Badge
+                      variant="default"
+                      className="bg-primary text-white shadow-lg shadow-primary/20 px-3 py-1 rounded-full flex items-center gap-1"
+                    >
+                      <Star
+                        size={14}
+                        className="fill-yellow-400 stroke-yellow-400"
+                      />
+                      TERPOPULER
+                    </Badge>
+                  </div>
+                )}
+
                 <div className="space-y-2">
-                  <h1 className="font-semibold font-inter">{item.title}</h1>
+                  <h1 className="font-semibold font-inter text-lg">
+                    {item.title}
+                  </h1>
                   <p className="text-muted-foreground">{item.description}</p>
                 </div>
                 <div className="space-y-2">

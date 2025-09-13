@@ -60,9 +60,7 @@ export default function OrderWrapper({ slug }: OrderWrapperProps) {
       <PageContainer>
         <div className="space-y-4">
           <div className="space-y-2">
-            <h1 className="font-bold text-2xl font-inter">
-              Order {priceItem?.title}
-            </h1>
+            <h1 className="font-bold text-2xl">Order {priceItem?.title}</h1>
             <p className="text-muted-foreground">
               Silahkan isi form berikut untuk melanjutkan proses order.
             </p>
